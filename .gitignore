@@ -1,0 +1,28 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 数据与权重（服务器端，不入库）
+checkpoints/
+dataset/
+data/
+*.tar.gz
+predictions/
+*.jsonl
+
+# 临时文件
+.tmp_*
+*.tmp
+
+# CodeBuddy 项目数据（勿删，不入库）
+.codebuddy/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 日志
+logs/
+*.log
