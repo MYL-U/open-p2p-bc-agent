@@ -70,7 +70,7 @@ uv run elefant/policy_model/inference.py \
 ## 状态追踪
 
 - [x] 第 1 天：选题与范围、主路径与验收、风险与应对、计划拆解（规划层，未实操）
-- [x] 第 2 天：方案组成与技术选型（见 `docs/02-第2日实验报告.md`）；本地 Git 仓库初始化；环境脚本就绪
+- [x] 第 2 天：方案组成与技术选型（见 `docs/02-第2日实验报告.md`）；本地 Git 仓库初始化并推送至 `https://github.com/MYL-U/open-p2p-bc-agent`（commit `126f3b4`）；环境脚本就绪
   - 关键结论：推理为 UDS 服务（需自研采集客户端）；鼠标位移离散化为 bin 后采样解码（评测对象为解码后位移）；数据源 `elefantai/p2p-toy-examples`、权重源 `guaguaa/open-p2p`
 - [ ] 第 3 天：UDS 采集客户端 + 服务器环境执行
 - [ ] 第 4~9 天：见计划表（对照录屏在第 5 天）
