@@ -12,9 +12,15 @@ data/
 predictions/
 *.jsonl
 
+# 本机 HF 下载缓存（toy 数据 / 权重临时中转，不入库）
+.hf_dl/
+
 # 临时文件
 .tmp_*
 *.tmp
+
+# 服务器凭据（含密码，严禁入库）
+docs/server-info.md
 
 # CodeBuddy 项目数据（勿删，不入库）
 .codebuddy/
