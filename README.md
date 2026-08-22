@@ -20,7 +20,7 @@
 │   ├── 04-CUDA故障诊断报告.md    # CUDA 故障根因与修复记录
 │   ├── PROJECT_MEMO.md          # 项目备忘（稳定约定 + 当天计划，见课程 03）
 │   ├── API_CONTRACT.md          # 接口约定（UDS / JSONL / 评测）
-│   └── server-info.md           # 服务器信息（IP/端口，密码不落盘）
+│   └── server-info.md           # 服务器信息（IP/端口；本地查阅，被 .gitignore 忽略不入库）
 ├── scripts/                     # 自研脚本（面向 GPU 服务器，Linux/bash）
 │   ├── collect_predictions.py   # UDS 采集客户端：逐帧发 Frame 收 Action，落盘 JSONL
 │   ├── evaluate.py              # 评测：预测 vs 标注对齐，键盘一致率 + 鼠标皮尔逊

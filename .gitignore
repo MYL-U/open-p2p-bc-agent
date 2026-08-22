@@ -30,6 +30,8 @@ id_ed25519*
 # 本机 SSH 工具链临时密码文件（cb 脚本生成，用后即删）
 cb_pass.txt
 cb_pass_ask.ps1
+# 服务器端点信息（IP/端口），本地查阅，不入库
+docs/server-info.md
 
 # ---- 构建与本地产物：日志、编辑器缓存、OS 垃圾 ----
 logs/
