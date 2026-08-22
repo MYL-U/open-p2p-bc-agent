@@ -108,9 +108,11 @@ def load_video_tensor(path: str):
         import torch
         import torchvision.io as tvi
 
-        video, _audio, _meta = tvi.read_video(
-            path, pts_unit="sec", output_format="HWC"
-        )
+        video, _audio, _meta = tvi.read_video(path, pts_unit="sec")
+        # torchvision 0.22+ 弃用了 output_format 参数，可能返回 (T, C, H, W)；
+        # 统一转成 (T, H, W, C) 以便逐帧 HWC 发送给推理服务。
+        if video.dim() == 4 and video.shape[1] == 3 and video.shape[3] != 3:
+            video = video.permute(0, 2, 3, 1).contiguous()
         if video.dtype != torch.uint8:
             video = video.to(torch.uint8)
         return video
