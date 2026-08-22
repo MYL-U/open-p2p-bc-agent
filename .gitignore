@@ -1,34 +1,59 @@
-# Python / uv
-.venv/
+# =============================================================
+# .gitignore — 忽略规则与理由
+# 分类：依赖与包管理 / 敏感信息 / 构建与本地产物 / 实验类
+# 报告（第 4 日）逐条引用本文件说明忽略原因。
+# =============================================================
+
+# ---- 依赖与包管理 ----
+# 依赖应由清单文件（uv.lock / requirements.txt）重装，整棵依赖树不入库
 __pycache__/
-*.pyc
+*.py[cod]
+.venv/
+venv/
+node_modules/
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# 数据与权重（服务器端，不入库）
-checkpoints/
-dataset/
-data/
-*.tar.gz
-predictions/
-*.jsonl
+# ---- 敏感信息：密钥、令牌、密码、私钥、本机环境文件 ----
+# 真实值只经环境变量注入，仓库最多留不含秘密的示例
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.jks
+.credentials*
+# 本机 SSH 工具链临时密码文件（cb 脚本生成，用后即删）
+cb_pass.txt
+cb_pass_ask.ps1
 
-# 本机 HF 下载缓存（toy 数据 / 权重临时中转，不入库）
-.hf_dl/
-
-# 临时文件
-.tmp_*
-*.tmp
-
-# 服务器凭据（含密码，严禁入库）
-docs/server-info.md
-
-# CodeBuddy 项目数据（勿删，不入库）
-.codebuddy/
-
-# 系统
-.DS_Store
-Thumbs.db
-
-# 日志
+# ---- 构建与本地产物：日志、编辑器缓存、OS 垃圾 ----
 logs/
 *.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*~
+# CodeBuddy 工作区数据（记忆/自动化/预览，非项目内容）
+.codebuddy/
+
+# ---- 实验类：数据集缓存、模型权重、中间结果目录 ----
+# 体积大且可再生成或另存，不进入仓库
+dataset/
+data/
+checkpoints/
+weights/
+outputs/
+results/
+# 采集/评测中间产物（可随时重新生成）
+predictions*.jsonl
+metrics*.json
+*.mp4
+*.proto
+.hf_dl/
